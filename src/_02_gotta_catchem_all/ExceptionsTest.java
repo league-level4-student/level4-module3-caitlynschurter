@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 
-class ExceptionsTest {
+class ExceptionsTest extends ExceptionMethods {
 	ExceptionMethods em = new ExceptionMethods();
 	
 	//1. This is an example of how one might test that an exception is thrown.
@@ -32,7 +32,12 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
-		
+		try {
+			divide(3.0, 0.0);
+		} catch (Exception e) {
+			System.out.println("Get super-neighed, sucker");
+			e.printStackTrace();
+		}
 	}
 	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
@@ -42,7 +47,12 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		try {
+			reverseString("");
+		} catch (Exception e) {
+			System.out.println("big nope, sorry");
+			e.printStackTrace();
+		}
 	}
 	
 	
